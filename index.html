@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>RoBlockly!</title> 
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script src="blockly/blockly_compressed.js"></script>
+		<script src="blockly/blocks_compressed.js"></script>
+		<script src="blockly/msg/js/en.js"></script>
+		<script src="newBlocks.js"></script>
+		
+	</head>
+	
+	<body>
+		<div id="blocklyArea"></div>
+		<div id="blocklyDiv"></div>
+
+		<xml id="toolbox" style="display: none">
+			<category name="Control" colour="120">
+				<block type="controls_if"></block>
+				<block type="controls_whileUntil"></block>
+				<block type="controls_for">
+			</category>
+			<category name="Logic" colour="210">
+				<block type="logic_compare"></block>
+				<block type="logic_operation"></block>
+				<block type="logic_boolean"></block>
+			</category>
+			<category name="Robot" colour="300">
+				<block type="robot_drive_timed">
+					<value name="TIME">
+						<shadow type="math_number">
+							<field name="NUM">3</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="robot_drive_distance">
+					<value name="DISTANCE">
+						<shadow type="math_number">
+							<field name="NUM">2</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="robot_turn_timed">
+					<value name="TIME">
+						<shadow type="math_number">
+							<field name="NUM">3</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="robot_turn_degrees">
+					<value name="DEGREES">
+						<shadow type="math_number">
+							<field name="NUM">90</field>
+						</shadow>
+					</value>
+				</block>
+			</category>
+		</xml>
+
+		<script>
+			var blocklyArea = document.getElementById('blocklyArea');
+			var blocklyDiv = document.getElementById('blocklyDiv');
+			var workspace = Blockly.inject(blocklyDiv, { toolbox: document.getElementById('toolbox') });
+			var onresize = function(e) {
+				var element = blocklyArea;
+				var x = 0;
+				var y = 0;
+
+				do {
+					x += element.offsetLeft;
+					y += element.offsetTop;
+					element = element.offsetParent;
+				} while (element);
+
+				blocklyDiv.style.left = x + 'px';
+				blocklyDiv.style.top = y + 'px';
+				blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+				blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+				Blockly.svgResize(workspace);
+			};
+			window.addEventListener('resize', onresize, false);
+			onresize();
+			Blockly.svgResize(workspace);
+		</script>
+	</body>
+</html>
