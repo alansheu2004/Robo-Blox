@@ -4,7 +4,8 @@ var workspace = Blockly.inject(blocklyDiv, { toolbox: document.getElementById('t
 	grid: {spacing: 20,
 		length: 3,
 		colour: '#ccc',
-		snap: true}, });
+		snap: true},
+	scrollbars: false});
 var onresize = function(e) {
 	var element = blocklyArea;
 	var x = 0;

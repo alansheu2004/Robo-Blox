@@ -15,28 +15,92 @@
 	
 	<body>
 		<header>
-			<img id="madeWithBlockly" src="resources/blockly_logo.png" alt="Smiley face">
+            <a href="http://www.ironclaw972.org" target="_blank"><img id="robobloxLogo" src="resources/roboblox_logo.svg" alt="972 Iron Claw Robo-blox"></a>
+			<a href="https://developers.google.com/blockly/" target="_blank"><img id="madeWithBlockly" src="resources/blockly_logo.png" alt="Built on Blockly"></a>
 		</header>
 
 		<nav>
-			<button class="run">Make Robot Go!</button>
+            <script>function run() {alert('Robot doesn\'t want to go because robot desn\'t know how to go!\n Please help robot go...');}</script>
+			<button class="run" onclick="run()">Make Robot Go!</button>
 		</nav>
 
 		<div id="blocklyArea"></div>
 		<div id="blocklyDiv"></div>
 
-		<xml id="toolbox" style="display: none">
-			<category name="Control" colour="120">
-				<block type="controls_if"></block>
-				<block type="controls_whileUntil"></block>
-				<block type="controls_for">
-			</category>
+		
+        <xml id="toolbox" style="display: none">
 			<category name="Logic" colour="210">
-				<block type="logic_compare"></block>
-				<block type="logic_operation"></block>
-				<block type="logic_boolean"></block>
+                <block type="logic_boolean"></block>
+				<block type="controls_if"></block>
+				<block type="controls_ifelse"></block>
+                <block type="logic_compare"></block>
+                <block type="logic_operation"></block>
+                <block type="logic_negate"></block>
+                <block type="logic_ternary"></block>
 			</category>
-			<category name="Robot" colour="300">
+            <category name="Loops" colour="120">
+                <block type="controls_repeat_ext"></block>
+                <block type="controls_whileUntil"></block>
+                <block type="controls_for"></block>
+                <block type="controls_forEach"></block>
+                <block type="controls_flow_statements"></block>
+			</category>
+            <category name="Math" colour="230">
+				<block type="math_number"></block>
+                <block type="math_arithmetic"></block>
+                <block type="math_single"></block>
+                <block type="math_trig"></block>
+                <block type="math_constant"></block>
+                <block type="math_number_property"></block>
+                <block type="math_round"></block>
+                <block type="math_modulo"></block>
+                <block type="math_constrain"></block>
+                <block type="math_random_int"></block>
+                <block type="math_random_float"></block>
+                <block type="math_atan2"></block>
+                <block type="math_on_list"></block>
+			</category>
+            <category name="Text" colour="160">
+                <block type="text"></block>
+                <block type="text_join"></block>
+                <block type="text_create_join_container"></block>
+                <block type="text_create_join_item"></block>
+                <block type="text_append"></block>
+                <block type="text_length"></block>
+                <block type="text_isEmpty"></block>
+                <block type="text_indexOf"></block>
+                <block type="text_charAt"></block>
+			</category>
+			<sep></sep>
+            <category name="Variables" colour="330">
+                <block type="variables_get"></block>
+                <block type="variables_set"></block>
+                <block type="math_change"></block>
+			</category>
+            <category name="Lists" colour="260">
+                <block type="lists_create_empty"></block>
+                <block type="lists_repeat"></block>
+                <block type="lists_reverse"></block>
+                <block type="lists_isEmpty"></block>
+                <block type="lists_length"></block>
+                <block type="lists_create_with"></block>
+                <block type="lists_create_with_item"></block>
+                <block type="lists_indexOf"></block>
+                <block type="lists_getIndex"></block>
+                <block type="lists_setIndex"></block>
+                <block type="lists_getSublist"></block>
+                <block type="lists_sort"></block>
+                <block type="lists_split"></block>
+			</category>
+            <category name="Functions" colour="330">
+                <block type="procedures_defnoreturn"></block>
+                <block type="procedures_defreturn"></block>
+                <block type="procedures_callnoreturn"></block>
+                <block type="procedures_callreturn"></block>
+                <block type="procedures_ifreturn"></block>
+			</category>
+            <sep></sep>
+            <category name="Robot" colour="0">
 				<block type="robot_drive_timed">
 					<value name="TIME">
 						<shadow type="math_number">
@@ -67,7 +131,7 @@
 				</block>
 			</category>
 		</xml>
-
+        
 		<script src="inject.js"></script>
 	</body>
 </html>
