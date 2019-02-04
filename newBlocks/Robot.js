@@ -48,10 +48,9 @@ Blockly.Blocks['robot_turn_degrees'] = {
     this.setNextStatement(true);
     this.setColour(300);
 
-	this.appendValueInput('DEGREES')
+	this.appendDummyInput()
 		.appendField('turn robot')
 		.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
-	this.appendDummyInput()
-		.appendField('degrees');
+		.appendField(new Blockly.FieldAngle(90), 'DEGREES');
   }
 };

@@ -9,11 +9,19 @@
 		<script src="blockly/blockly_compressed.js"></script>
 		<script src="blockly/blocks_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
-		<script src="newBlocks.js"></script>
+		<script src="newBlocks/Robot.js"></script>
 		
 	</head>
 	
 	<body>
+		<header>
+			<img id="madeWithBlockly" src="resources/blockly_logo.png" alt="Smiley face">
+		</header>
+
+		<nav>
+			<button class="run">Make Robot Go!</button>
+		</nav>
+
 		<div id="blocklyArea"></div>
 		<div id="blocklyDiv"></div>
 
@@ -60,30 +68,6 @@
 			</category>
 		</xml>
 
-		<script>
-			var blocklyArea = document.getElementById('blocklyArea');
-			var blocklyDiv = document.getElementById('blocklyDiv');
-			var workspace = Blockly.inject(blocklyDiv, { toolbox: document.getElementById('toolbox') });
-			var onresize = function(e) {
-				var element = blocklyArea;
-				var x = 0;
-				var y = 0;
-
-				do {
-					x += element.offsetLeft;
-					y += element.offsetTop;
-					element = element.offsetParent;
-				} while (element);
-
-				blocklyDiv.style.left = x + 'px';
-				blocklyDiv.style.top = y + 'px';
-				blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
-				blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
-				Blockly.svgResize(workspace);
-			};
-			window.addEventListener('resize', onresize, false);
-			onresize();
-			Blockly.svgResize(workspace);
-		</script>
+		<script src="inject.js"></script>
 	</body>
 </html>
