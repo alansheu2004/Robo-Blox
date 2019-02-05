@@ -20,8 +20,24 @@
 		</header>
 
 		<nav>
+            <script>
+                function run() {alert('Robot doesn\'t want to go because robot desn\'t know how to go!\n Please help robot go...');}
+                function reset() {
+                    if(confirm('Are you sure you want to reset? This will delete all your code!')){
+                        Blockly.mainWorkspace.clear();
+                        addStartBlock();
+                    }
+                }
+            </script>
             <button id="reset" class="fade" onclick="reset()">Reset</button>
-            <script>function run() {alert('Robot doesn\'t want to go because robot desn\'t know how to go!\n Please help robot go...');}</script>
+            
+            <p class="sliderLabelLeft">Serial</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <p class="sliderLabelRight">Periodic</p>
+
 			<button id="run" class="fade" onclick="run()">Make Robot Go!</button>
 		</nav>
 

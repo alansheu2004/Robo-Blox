@@ -27,10 +27,14 @@ var onresize = function(e) {
 };
 
 var defaultBlocks = document.getElementById('blocklyDefault');
-var startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
-startBlock.setDeletable(false);
-startBlock.moveBy(120, 20);
-startBlock.setMovable(false);
+var startBlock;
+function addStartBlock() {
+	startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
+	startBlock.setDeletable(false);
+	startBlock.moveBy(120, 20);
+	startBlock.setMovable(false);
+}
+addStartBlock();
 
 window.addEventListener('resize', onresize, false);
 onresize();

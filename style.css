@@ -30,7 +30,7 @@ header {
 }
 
 footer {
-	background: black;
+	background: rgb(60,60,60);;
 	flex: 0 0 60px;
 }
 
@@ -65,8 +65,20 @@ button#run {
 	border: 3px solid #ff8c3c;
 }
 
+button#reset {
+	background-color: #ef4545;
+	color: white;
+	float: left;
+	vertical-align: middle;
+	margin: 7px 20px 0 20px;
+	font-size: 14px;
+	padding: 1px 6px;
+	border-radius: 10px;
+	border: 3px solid #ef4545;
+}
+
 button.fade {
-	-webkit-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
 
@@ -74,13 +86,74 @@ button.fade:hover {
 	filter: saturate(300%);
 	/*background-color: #FF6400;
 	border-color: #FF6400;*/
-	-webkit-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
 
-button.run:active {
-	filter: brightness(00%);
+button.fade:active {
+	filter: brightness(90%);
 	transition-duration: 0s;
+}
+
+[class^="sliderLabel"] {
+	font-size: 16px;
+	display: inline;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.sliderLabelLeft {
+	display: inline;
+	color: white;
+}
+
+.sliderLabelRight {
+	display: inline;
+	color: white;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 16px;
+	margin: 12px 2px 0 2px;
+}
+
+.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	border-radius: 34px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 0px;
+	bottom: -3px;
+	background-color: white;
+	border-radius: 50%;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+  
+.switch input:checked + .slider:before {
+	left: 20px;
 }
 
 div#blocklyArea {
