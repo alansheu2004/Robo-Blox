@@ -53,7 +53,7 @@ nav {
 	flex: 0 0 40px;
 }
 
-button.run {
+button#run {
 	background-color: #ff8c3c;
 	color: white;
 	float: right;
@@ -63,20 +63,24 @@ button.run {
 	padding: 1px 6px;
 	border-radius: 10px;
 	border: 3px solid #ff8c3c;
+}
+
+button.fade {
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.3s;
 }
 
-button.run:hover {
-	background-color: #FF6400;
-	border-color: #FF6400;
+button.fade:hover {
+	filter: saturate(300%);
+	/*background-color: #FF6400;
+	border-color: #FF6400;*/
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.3s;
 }
 
 button.run:active {
+	filter: brightness(00%);
 	transition-duration: 0s;
-	background-color: #e65a00;
 }
 
 div#blocklyArea {

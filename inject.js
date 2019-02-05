@@ -28,7 +28,8 @@ var onresize = function(e) {
 
 var defaultBlocks = document.getElementById('blocklyDefault');
 var startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
-startBlock.setDeletable(true);
+startBlock.setDeletable(false);
+startBlock.moveBy(120, 20);
 startBlock.setMovable(false);
 
 window.addEventListener('resize', onresize, false);
