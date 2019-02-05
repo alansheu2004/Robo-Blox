@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>RoBlockly!</title> 
+		<title>Robo-Blox!</title> 
 
 		<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -27,6 +27,9 @@
 		<div id="blocklyArea"></div>
 		<div id="blocklyDiv"></div>
 
+        <footer>
+
+        </footer>
 		
         <xml id="toolbox" style="display: none">
 			<category name="Logic" colour="210">
@@ -100,7 +103,7 @@
                 <block type="procedures_ifreturn"></block>
 			</category>
             <sep></sep>
-            <category name="Robot" colour="0">
+            <category name="Robot" colour="20">
 				<block type="robot_drive_timed">
 					<value name="TIME">
 						<shadow type="math_number">
@@ -123,15 +126,27 @@
 					</value>
 				</block>
 				<block type="robot_turn_degrees">
-					<value name="DEGREES">
+					<value name="ANGLE">
 						<shadow type="math_number">
 							<field name="NUM">90</field>
 						</shadow>
 					</value>
-				</block>
+                </block>
+                <block type="robot_wait">
+					<value name="TIME">
+						<shadow type="math_number">
+							<field name="NUM">3/field>
+						</shadow>
+					</value>
+                </block>
+                <block type="robot_on_start" disabled="true"></block>
 			</category>
 		</xml>
         
+        <xml id="blocklyDefault" style="display: none">
+			<block type="robot_on_start"></block>
+		</xml>
+
 		<script src="inject.js"></script>
 	</body>
 </html>

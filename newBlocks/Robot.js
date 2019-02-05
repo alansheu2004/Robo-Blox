@@ -2,7 +2,7 @@ Blockly.Blocks['robot_drive_timed'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(300);
+    this.setColour(20);
 
 	this.appendValueInput('TIME')
 		.appendField('move robot')
@@ -17,7 +17,7 @@ Blockly.Blocks['robot_drive_distance'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(300);
+    this.setColour(20);
 
 	this.appendValueInput('DISTANCE')
 		.appendField('move robot')
@@ -31,7 +31,7 @@ Blockly.Blocks['robot_turn_timed'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(300);
+    this.setColour(20);
 
 	this.appendValueInput('TIME')
 		.appendField('turn robot')
@@ -46,11 +46,37 @@ Blockly.Blocks['robot_turn_degrees'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(300);
+    this.setColour(20);
 
-	this.appendDummyInput()
-		.appendField('turn robot')
-		.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
-		.appendField(new Blockly.FieldAngle(90), 'DEGREES');
-  }
+		this.appendValueInput('ANGLE')
+			.appendField('turn robot')
+			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE');
+		this.appendDummyInput()
+			.appendField('degrees');
+	}
+	
+};
+
+Blockly.Blocks['robot_wait'] = {
+  init: function() {
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(20);
+
+		this.appendValueInput('TIME')
+			.appendField('wait');
+		this.appendDummyInput()
+			.appendField('seconds');
+	}
+	
+};
+
+Blockly.Blocks['robot_on_start'] = {
+  init: function() {
+    this.setNextStatement(true);
+		this.setColour(20);
+		this.appendDummyInput()
+			.appendField('On robot start');
+	}
+	
 };

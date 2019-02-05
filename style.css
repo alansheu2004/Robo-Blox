@@ -29,6 +29,11 @@ header {
 	flex: 0 0 80px;
 }
 
+footer {
+	background: black;
+	flex: 0 0 60px;
+}
+
 img#madeWithBlockly {
 	height: 60px;
 	width: auto;
@@ -53,7 +58,7 @@ button.run {
 	color: white;
 	float: right;
 	vertical-align: middle;
-	margin: 6px 20px 0 0;
+	margin: 7px 20px 0 0;
 	font-size: 14px;
 	padding: 1px 6px;
 	border-radius: 10px;

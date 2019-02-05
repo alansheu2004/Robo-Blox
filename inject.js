@@ -1,5 +1,8 @@
 var blocklyArea = document.getElementById('blocklyArea');
 var blocklyDiv = document.getElementById('blocklyDiv');
+
+Blockly.BlockSvg.START_HAT = true;
+
 var workspace = Blockly.inject(blocklyDiv, { toolbox: document.getElementById('toolbox'),
 	grid: {spacing: 20,
 		length: 3,
@@ -16,12 +19,17 @@ var onresize = function(e) {
 		element = element.offsetParent;
 	} while (element);
 
-	blocklyDiv.style.left = x + 'px';
-	blocklyDiv.style.top = y + 'px';
+	blocklyDiv.style.left = x + 'px'; 
+	blocklyDiv.style.top = y + 'px'; 
 	blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
 	blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
 	Blockly.svgResize(workspace);
 };
+
+var defaultBlocks = document.getElementById('blocklyDefault');
+var startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
+startBlock.setDeletable(true);
+startBlock.setMovable(false);
 
 window.addEventListener('resize', onresize, false);
 onresize();
