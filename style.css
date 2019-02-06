@@ -104,7 +104,7 @@ button.fade:active {
 
 .sliderLabelLeft {
 	display: inline;
-	color: white;
+	color: #ff8c3c;
 }
 
 .sliderLabelRight {
@@ -115,7 +115,7 @@ button.fade:active {
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 40px;
+	width: 32px;
 	height: 16px;
 	margin: 12px 2px 0 2px;
 }
@@ -133,7 +133,7 @@ button.fade:active {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
+	background-color: #ffbe96;
 	border-radius: 34px;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -146,14 +146,14 @@ button.fade:active {
 	width: 22px;
 	left: 0px;
 	bottom: -3px;
-	background-color: white;
+	background-color: #ff8c3c;
 	border-radius: 50%;
 	-webkit-transition: .4s;
 	transition: .4s;
 }
   
 .switch input:checked + .slider:before {
-	left: 20px;
+	left: 10px;
 }
 
 div#blocklyArea {

@@ -28,12 +28,21 @@
                         addStartBlock();
                     }
                 }
+                function sliderSwitch(element) {
+                    if(element.checked) {
+                        element.parentElement.previousElementSibling.style.color = 'white';
+                        element.parentElement.nextElementSibling.style.color = '#ff8c3c';
+                    } else {
+                        element.parentElement.previousElementSibling.style.color = '#ff8c3c';
+                        element.parentElement.nextElementSibling.style.color = 'white';
+                    }
+                }
             </script>
             <button id="reset" class="fade" onclick="reset()">Reset</button>
             
-            <p class="sliderLabelLeft">Serial</p>
+            <p class="sliderLabelLeft">Procedural</p>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onchange="sliderSwitch(this)">
                 <span class="slider round"></span>
             </label>
             <p class="sliderLabelRight">Periodic</p>
