@@ -1,44 +1,15 @@
-Blockly.Blocks['robot_drive_timed'] = {
-  init: function() {
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour(20);
-
-	this.appendValueInput('TIME')
-		.appendField('move robot')
-		.appendField(new Blockly.FieldDropdown([['forward', 'FORWARD'], ['backward', 'BACKWARD']]), 'MODE')
-		.appendField('for');
-	this.appendDummyInput()
-		.appendField('seconds');
-  }
-};
-
 Blockly.Blocks['robot_drive_distance'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(20);
 
-	this.appendValueInput('DISTANCE')
+	this.appendDummyInput()
 		.appendField('move robot')
 		.appendField(new Blockly.FieldDropdown([['forward', 'FORWARD'], ['backward', 'BACKWARD']]), 'MODE')
-	this.appendDummyInput()
+		.appendField('by')
+		.appendField(new Blockly.FieldTextInput('2'), 'DISTANCE')
 		.appendField('feet');
-  }
-};
-
-Blockly.Blocks['robot_turn_timed'] = {
-  init: function() {
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setColour(20);
-
-	this.appendValueInput('TIME')
-		.appendField('turn robot')
-		.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
-		.appendField('for');
-	this.appendDummyInput()
-		.appendField('seconds');
   }
 };
 
@@ -48,11 +19,11 @@ Blockly.Blocks['robot_turn_degrees'] = {
     this.setNextStatement(true);
     this.setColour(20);
 
-		this.appendValueInput('ANGLE')
-			.appendField('turn robot')
-			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE');
 		this.appendDummyInput()
-			.appendField('degrees');
+			.appendField('turn robot')
+			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
+			.appendField('by')
+			.appendField(new Blockly.FieldAngle(90), 'ANGLE');
 	}
 	
 };
@@ -63,9 +34,9 @@ Blockly.Blocks['robot_wait'] = {
     this.setNextStatement(true);
     this.setColour(20);
 
-		this.appendValueInput('TIME')
-			.appendField('wait');
 		this.appendDummyInput()
+			.appendField('wait for')
+			.appendField(new Blockly.FieldTextInput('2'), 'TIME')
 			.appendField('seconds');
 	}
 	

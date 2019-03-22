@@ -31,7 +31,7 @@ var startBlock;
 function addStartBlock() {
 	startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
 	startBlock.setDeletable(false);
-	startBlock.moveBy(120, 20);
+	startBlock.moveBy(20, 20);
 	startBlock.setMovable(false);
 }
 addStartBlock();
