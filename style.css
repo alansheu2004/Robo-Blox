@@ -148,8 +148,8 @@ button.fade:active {
 	bottom: -3px;
 	background-color: #ff8c3c;
 	border-radius: 50%;
-	-webkit-transition: .4s;
-	transition: .4s;
+	-webkit-transition: .2s;
+	transition: .2s;
 }
   
 .switch input:checked + .slider:before {
