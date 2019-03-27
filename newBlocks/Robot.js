@@ -45,7 +45,7 @@ Blockly.Blocks['robot_wait'] = {
 Blockly.Blocks['robot_on_start'] = {
   init: function() {
     this.setNextStatement(true);
-		this.setColour(20);
+		this.setColour('#E4D00A');
 		this.appendDummyInput()
 			.appendField('On robot start');
 	}
