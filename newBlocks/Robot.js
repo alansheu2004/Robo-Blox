@@ -22,8 +22,6 @@ Blockly.Blocks['robot_turn_degrees'] = {
 		this.appendDummyInput()
 			.appendField('turn robot')
 			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
-			.appendField('by')
-			.appendField(new Blockly.FieldAngle(90), 'ANGLE');
 	}
 	
 };
@@ -45,7 +43,7 @@ Blockly.Blocks['robot_wait'] = {
 Blockly.Blocks['robot_on_start'] = {
   init: function() {
     this.setNextStatement(true);
-		this.setColour('#E4D00A');
+		this.setColour('#e4b409');
 		this.appendDummyInput()
 			.appendField('On robot start');
 	}
