@@ -6,10 +6,14 @@
 
 		<link rel="stylesheet" type="text/css" href="style.css">
 
-		<script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
+        <script src="blockly/generators/javascript/robot.js"></script>
 		<script src="blockly/blocks_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
-		<script src="newBlocks/Robot.js"></script>
+        <script src="newBlocks/Robot.js"></script>
+        <script src="robotJson.js"></script>
+        <script src="script.js"></script>
 		
 	</head>
 	
@@ -20,24 +24,6 @@
 		</header>
 
 		<nav>
-            <script>
-                function run() {alert('Robot doesn\'t want to go because robot desn\'t know how to go!\n Please help robot go...');}
-                function reset() {
-                    if(confirm('Are you sure you want to reset? This will delete all your code!')){
-                        Blockly.mainWorkspace.clear();
-                        addStartBlock();
-                    }
-                }
-                function sliderSwitch(element) {
-                    if(element.checked) {
-                        element.parentElement.previousElementSibling.style.color = 'white';
-                        element.parentElement.nextElementSibling.style.color = '#ff8c3c';
-                    } else {
-                        element.parentElement.previousElementSibling.style.color = '#ff8c3c';
-                        element.parentElement.nextElementSibling.style.color = 'white';
-                    }
-                }
-            </script>
             <button id="reset" class="fade" onclick="reset()">Reset</button>
             
             <!--<p class="sliderLabelLeft">Procedural</p>
@@ -130,8 +116,8 @@
 				
             </category>-->
             
-            <block type="robot_drive_distance"></block>
-            <block type="robot_turn_degrees"></block>
+            <block type="robot_drive"></block>
+            <block type="robot_turn"></block>
             <block type="robot_wait"></block>
             <block type="controls_repeat"></block>
 		</xml>

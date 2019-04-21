@@ -71,7 +71,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "args0": [{
       "type": "field_number",
       "name": "TIMES",
-      "value": 10,
+      "value": 3,
       "min": 0,
       "precision": 1
     }],

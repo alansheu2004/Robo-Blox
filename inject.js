@@ -30,12 +30,14 @@ var defaultBlocks = document.getElementById('blocklyDefault');
 var startBlock;
 function addStartBlock() {
 	startBlock = workspace.getBlockById(Blockly.Xml.domToWorkspace(defaultBlocks, workspace)[0]);
-	startBlock.setDeletable(false);
+	//startBlock.setDeletable(false);
 	startBlock.moveBy(20, 20);
-	startBlock.setMovable(false);
+	//startBlock.setMovable(false);
 }
 addStartBlock();
 
 window.addEventListener('resize', onresize, false);
 onresize();
 Blockly.svgResize(workspace);
+
+workspace.addChangeListener(generateCode);

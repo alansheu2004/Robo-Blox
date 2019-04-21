@@ -1,4 +1,4 @@
-Blockly.Blocks['robot_drive_distance'] = {
+Blockly.Blocks['robot_drive'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -13,7 +13,7 @@ Blockly.Blocks['robot_drive_distance'] = {
   }
 };
 
-Blockly.Blocks['robot_turn_degrees'] = {
+Blockly.Blocks['robot_turn'] = {
   init: function() {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
