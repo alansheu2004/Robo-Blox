@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Robo-Blox!</title> 
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.js"></script>
+
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
+        <script src="blockly/generators/javascript/robot.js"></script>
+		<script src="blockly/blocks_compressed.js"></script>
+		<script src="blockly/msg/js/en.js"></script>
+        <script src="newBlocks/Robot.js"></script>
+        <script src="script.js"></script>
+		
+	</head>
+	
+	<body>
+		<header>
+            <img id="robobloxLogo" src="resources/roboblox_logo.svg" alt="972 Iron Claw Robo-blox">
+		</header>
+
+		<nav>
+            <button id="reset" class="fade" onclick="reset()">Reset</button>
+            <button id="run" class="fade" onclick="run()">Make Robot Go!</button>
+            
+            <!--<p class="sliderLabelLeft">Procedural</p>
+            <label class="switch">
+                <input type="checkbox" onchange="sliderSwitch(this)">
+                <span class="slider round"></span>
+            </label>
+            <p class="sliderLabelRight">Periodic</p>-->
+
+			
+		</nav>
+
+		<div id="blocklyArea"></div>
+		<div id="blocklyDiv"></div>
+
+        <footer>
+            <img id="madeWithBlockly" src="resources/blockly_logo.png" alt="Built on Blockly">
+        </footer>
+
+        <div id="glassPane">
+            <div id="runDiv">
+                <div id="loadingRing">
+                    <div></div>
+                </div>
+                <h1>Generating Code...</h1>
+                <button id="cancel" class="fade" onclick="cancel()">Cancel</button>
+            </div>
+        </div>
+		
+        <xml id="toolbox" style="display: none">
+			<!--<category name="Logic" colour="210">
+                <block type="logic_boolean"></block>
+				<block type="controls_if"></block>
+				<block type="controls_ifelse"></block>
+                <block type="logic_compare"></block>
+                <block type="logic_operation"></block>
+                <block type="logic_negate"></block>
+                <block type="logic_ternary"></block>
+			</category>
+            <category name="Loops" colour="120">
+                <block type="controls_repeat_ext"></block>
+                <block type="controls_whileUntil"></block>
+                <block type="controls_for"></block>
+                <block type="controls_forEach"></block>
+                <block type="controls_flow_statements"></block>
+			</category>
+            <category name="Math" colour="230">
+				<block type="math_number"></block>
+                <block type="math_arithmetic"></block>
+                <block type="math_single"></block>
+                <block type="math_trig"></block>
+                <block type="math_constant"></block>
+                <block type="math_number_property"></block>
+                <block type="math_round"></block>
+                <block type="math_modulo"></block>
+                <block type="math_constrain"></block>
+                <block type="math_random_int"></block>
+                <block type="math_random_float"></block>
+                <block type="math_atan2"></block>
+                <block type="math_on_list"></block>
+			</category>
+            <category name="Text" colour="160">
+                <block type="text"></block>
+                <block type="text_join"></block>
+                <block type="text_create_join_item"></block>
+                <block type="text_append"></block>
+                <block type="text_length"></block>
+                <block type="text_isEmpty"></block>
+                <block type="text_indexOf"></block>
+                <block type="text_charAt"></block>
+			</category>
+			<sep></sep>
+            <category name="Variables" colour="330">
+                <block type="variables_get"></block>
+                <block type="variables_set"></block>
+                <block type="math_change"></block>
+			</category>
+            <category name="Lists" colour="260">
+                <block type="lists_create_empty"></block>
+                <block type="lists_repeat"></block>
+                <block type="lists_reverse"></block>
+                <block type="lists_isEmpty"></block>
+                <block type="lists_length"></block>
+                <block type="lists_create_with"></block>
+                <block type="lists_create_with_item"></block>
+                <block type="lists_indexOf"></block>
+                <block type="lists_getIndex"></block>
+                <block type="lists_setIndex"></block>
+                <block type="lists_getSublist"></block>
+                <block type="lists_sort"></block>
+                <block type="lists_split"></block>
+			</category>
+            <category name="Functions" colour="330">
+                <block type="procedures_defnoreturn"></block>
+                <block type="procedures_defreturn"></block>
+                <block type="procedures_ifreturn"></block>
+			</category>
+            <sep></sep>
+            <category name="Robot" colour="20">
+				
+            </category>-->
+            
+            <block type="robot_drive"></block>
+            <block type="robot_turn"></block>
+            <block type="robot_wait"></block>
+            <block type="controls_repeat"></block>
+		</xml>
+        
+        <xml id="blocklyDefault" style="display: none">
+			<block type="robot_on_start"></block>
+		</xml>
+
+		<script src="inject.js"></script>
+	</body>
+
+    <script>
+        document.getElementsByClassName("blocklyBlockCanvas")[1].transform.baseVal[0].matrix.f = 22;
+    </script>
+</html>

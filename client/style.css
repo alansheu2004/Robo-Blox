@@ -1,0 +1,254 @@
+@font-face {
+	font-family: Montserrat;
+	font-weight: normal;
+	src: url("resources/fonts/Monserrat/Montserrat-Regular.otf") format("opentype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Montserrat;
+}
+
+*:focus {
+	outline: none;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-flow: column;
+}
+
+header {
+	background: black;
+	flex: 0 0 15vh;
+}
+
+footer {
+	background: rgb(60,60,60);;
+	flex: 0 0 10vh;
+}
+
+img#madeWithBlockly {
+	display: block;
+	height: 6vh;
+	width: auto;
+	margin: auto;
+	margin-top: 2.5vh;
+}
+
+img#robobloxLogo {
+	display: block;
+	height: 10vh;
+	width: auto;
+	margin: auto;
+	margin-top: 3vh;
+}
+
+nav {
+	background: rgb(60,60,60);
+	flex: 0 0 7vh;
+}
+
+button#run {
+	background-color: #ff8c3c;
+	color: white;
+	float: right;
+	vertical-align: middle;
+	margin: 1.5vh 2vw 0 0;
+	font-size: 2vh;
+	padding: 0.5vh 1vw;
+	border-radius: 1vh;
+	border: 3px solid #ff8c3c;
+}
+
+button#reset {
+	background-color: #ef4545;
+	color: white;
+	float: left;
+	vertical-align: middle;
+	margin: 1.5vh 0 0 2vw;
+	font-size: 2vh;
+	padding: 0.5vh 1vw;
+	border-radius: 1vh;
+	border: 3px solid #ef4545;
+}
+
+button.fade {
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+button.fade:hover {
+	filter: saturate(300%);
+	/*background-color: #FF6400;
+	border-color: #FF6400;*/
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+button.fade:active {
+	filter: brightness(90%);
+	transition-duration: 0s;
+}
+
+[class^="sliderLabel"] {
+	font-size: 16px;
+	display: inline;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.sliderLabelLeft {
+	display: inline;
+	color: #ff8c3c;
+}
+
+.sliderLabelRight {
+	display: inline;
+	color: white;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 16px;
+	margin: 12px 2px 0 2px;
+}
+
+.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ffbe96;
+	border-radius: 34px;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 0px;
+	bottom: -3px;
+	background-color: #ff8c3c;
+	border-radius: 50%;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+  
+.switch input:checked + .slider:before {
+	left: 10px;
+}
+
+@keyframes fadeIn {
+	from {filter: opacity(0%);}
+	to {filter: opacity(100%);}
+}
+
+@keyframes fadeOut {
+	from {filter: opacity(100%);}
+	to {filter: opacity(0%);}
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+	animation-duration: 0.5s;
+}
+
+.fadeOut {
+	animation-name: fadeOut;
+	animation-duration: 0.5s;
+}
+
+div#glassPane {
+	display: none;
+	z-index: 999;
+	position: fixed;
+	background-color: rgb(0,0,0, 0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div#runDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 60vw;
+	height: 40vw;
+	top: calc(50vh - 20vw);
+	left: calc(50vw - 30vw);
+	border-radius: 3vw;
+	background-color: white;
+}
+
+@keyframes rotating {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+div#loadingRing {
+	width: 10vw;
+	height: 10vw;
+	border-radius: 5vw;
+	background-image: conic-gradient(white 0deg 30deg, #333333 330deg);
+	animation-name: rotating;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+div#loadingRing > div {
+	width: 7vw;
+	height: 7vw;
+	margin: 1.5vw;
+	border-radius: 4vw;
+	background-color: white;
+}
+
+h1 {
+	margin-top: 3vw;
+	font-size: 3vw;
+}
+
+button#cancel {
+	background-color: #ff6214;
+	color: white;
+	margin-top: 3vw;
+	font-size: 2vw;
+	padding: 1vw 2vw;
+	border-radius: 1vw;
+	border: 3px solid #ff6214;
+}
+
+div#blocklyArea {
+	flex: 1 1 auto;
+}
+
+div#blocklyDiv {
+	position: absolute;
+}
+
+div.blocklyToolboxDiv {
+	padding-top: 5px;
+}
