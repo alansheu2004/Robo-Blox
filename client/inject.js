@@ -37,6 +37,8 @@ function addStartBlock() {
 }
 addStartBlock();
 
+workspace.addChangeListener(update);
+
 window.addEventListener('resize', onresize, false);
 onresize();
 Blockly.svgResize(workspace);

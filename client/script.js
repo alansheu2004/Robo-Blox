@@ -29,3 +29,8 @@ function sliderSwitch(element) {
         element.parentElement.nextElementSibling.style.color = 'white';
     }
 }
+
+function update(event) {
+  var code = Blockly.JavaScript.workspaceToCode(workspace);
+  console.log(code);
+}

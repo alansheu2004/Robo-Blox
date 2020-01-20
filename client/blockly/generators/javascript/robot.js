@@ -1,26 +1,26 @@
 Blockly.JavaScript['robot_drive'] = function(block) {
-    // Search the text for a substring.
-    var mode = block.getFieldValue('MODE') == "FORWARD" ? "forward" : "backward" ;
-    var distance = block.getFieldValue('DISTANCE')
-    var code = "drive(\'" + mode + "\', " + distance + ");\n"
-    return code;
-};
+    var code  = {direction: block.getFieldValue("DIRECTION"), distance: block.getFieldValue("DISTANCE")};
+    return "\"drive\": " + JSON.stringify(code) + ",\n";
+}
 
 Blockly.JavaScript['robot_turn'] = function(block) {
-    // Search the text for a substring.
-    var mode = block.getFieldValue('MODE') == "LEFT" ? "left" : "right" ;
-    var code = "turn(\'" + mode + "\');\n"
-    return code;
-};
+    var code  = {direction: block.getFieldValue("DIRECTION")};
+    return "\"turn\": " + JSON.stringify(code) + ",\n";
+}
 
 Blockly.JavaScript['robot_wait'] = function(block) {
-    // Search the text for a substring.
-    var mode = block.getFieldValue('TIME');
-    var code = "wait(" + mode + ");\n"
-    return code;
-};
+    var code  = {time: block.getFieldValue("TIME")};
+    return "\"wait\": " + JSON.stringify(code) + ",\n";
+}
 
 Blockly.JavaScript['robot_on_start'] = function(block) {
-    var code = 'onRobotStart:\n';
+    return "{";
+}
+
+Blockly.JavaScript['controls_repeat'] = function(block) {
+    code = "";
+    for(var i = 0; i < block.getFieldValue('TIMES'); i++) {
+        code+= Blockly.JavaScript.statementToCode(block, 'DO');
+    }
     return code;
-};
+}

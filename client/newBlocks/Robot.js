@@ -6,9 +6,9 @@ Blockly.Blocks['robot_drive'] = {
 
 	this.appendDummyInput()
 		.appendField('move robot')
-		.appendField(new Blockly.FieldDropdown([['forward', 'FORWARD'], ['backward', 'BACKWARD']]), 'MODE')
+		.appendField(new Blockly.FieldDropdown([['forward', 'FORWARD'], ['backward', 'BACKWARD']]), 'DIRECTION')
 		.appendField('by')
-		.appendField(new Blockly.FieldTextInput('2'), 'DISTANCE')
+		.appendField(new Blockly.FieldNumber(2), 'DISTANCE')
 		.appendField('feet');
   }
 };
@@ -21,7 +21,7 @@ Blockly.Blocks['robot_turn'] = {
 
 		this.appendDummyInput()
 			.appendField('turn robot')
-			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'MODE')
+			.appendField(new Blockly.FieldDropdown([['left', 'LEFT'], ['right', 'RIGHT']]), 'DIRECTION')
 	}
 	
 };
@@ -34,7 +34,7 @@ Blockly.Blocks['robot_wait'] = {
 
 		this.appendDummyInput()
 			.appendField('wait for')
-			.appendField(new Blockly.FieldTextInput('2'), 'TIME')
+			.appendField(new Blockly.FieldNumber(2), 'TIME')
 			.appendField('seconds');
 	}
 	
